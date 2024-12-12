@@ -81,10 +81,10 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
             if (direction != -1) {
                 String directionString = "";
                 switch (direction) {
-                    case 0: directionString = "North"; break;
-                    case 1: directionString = "South"; break;
-                    case 2: directionString = "East"; break;
-                    case 3: directionString = "West"; break;
+                    case 0: directionString = "North (Red)"; break;
+                    case 1: directionString = "South (Blue)"; break;
+                    case 2: directionString = "East (Green)"; break;
+                    case 3: directionString = "West (Yellow)"; break;
                 }
 
                 String tiltMessage = "Tilt direction: " + directionString;
@@ -112,10 +112,10 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     }
 
     private int getTiltDirection(float x, float y) {
-        if (y < -4) return 0;
-        if (y > 4) return 1;
-        if (x > 4) return 2;
-        if (x < -4) return 3;
+        if (x < -4) return 0;
+        if (x > 4) return 1;
+        if (y > 4) return 2;
+        if (y < -4) return 3;
         return -1;
     }
 
